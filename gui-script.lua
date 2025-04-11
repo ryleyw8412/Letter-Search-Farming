@@ -186,34 +186,38 @@ UIStroke_2.Thickness = 1.2
 local loopOn = false
 
 AllLetters.Activated:Connect(function()
-	loopOn = true
-	local oldPlrPos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+	if not loopOn then
+		loopOn = true
+		local oldPlrPos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
 
-	for i, v in game.Workspace:WaitForChild("Deployed Letters"):GetChildren() do
-		if loopOn then
-			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
-			print("visited letter "..v.Name)
-			task.wait(0.1)
+		for i, v in game.Workspace:WaitForChild("Deployed Letters"):GetChildren() do
+			if loopOn then
+				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
+				print("visited letter "..v.Name)
+				task.wait(0.1)
+			end
 		end
+
+		loopOn = false
 	end
-	
-	loopOn = false
 end)
 
 NeededLetters.Activated:Connect(function()
-	loopOn = true
-	local oldPlrPos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-	local letterNeeded = game:GetService("ReplicatedStorage"):WaitForChild("Values"):WaitForChild("LetterFinding").Value
+	if not loopOn then
+		loopOn = true
+		local oldPlrPos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+		local letterNeeded = game:GetService("ReplicatedStorage"):WaitForChild("Values"):WaitForChild("LetterFinding").Value
 
-	for i, v in game.Workspace:WaitForChild("Deployed Letters"):GetChildren() do
-		if v.Name == letterNeeded and loopOn then
-			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
-			print("visited letter "..v.Name)
-			task.wait(0.1)
-		end 
+		for i, v in game.Workspace:WaitForChild("Deployed Letters"):GetChildren() do
+			if v.Name == letterNeeded and loopOn then
+				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
+				print("visited letter "..v.Name)
+				task.wait(0.1)
+			end 
+		end
+
+		loopOn = false
 	end
-	
-	loopOn = false
 end)
 
 CloseButton.Activated:Connect(function()
