@@ -173,11 +173,22 @@ RegLetters.Activated:Connect(function()
 
 		for index, v in splitWord do
 			if loopOn then
-				local letterPart = game.Workspace:WaitForChild("Deployed Letters"):FindFirstChild(splitWord[index])
+				local letterPart
 				
-				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = letterPart.CFrame
-				print("visited letter "..letterPart.Name)
-				task.wait(0.25)
+				for i, letter in game.Workspace:WaitForChild("Deployed Letters"):GetChildren() do
+					if letter.Name == splitWord[index] and letter.Transparency ~= 1 then
+						letterPart = letter
+						break
+					end
+				end
+				
+				if letterPart.Transparency ~= 1 then
+					game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = letterPart.CFrame
+					print("visited letter "..letterPart.Name)
+					task.wait(0.25)
+				else
+					
+				end
 			end
 		end
 
@@ -190,9 +201,9 @@ NeededLetters.Activated:Connect(function()
 		loopOn = true
 		local oldPlrPos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
 		local letterNeeded = game:GetService("ReplicatedStorage"):WaitForChild("Values"):WaitForChild("LetterFinding").Value
-
+		
 		for i, v in game.Workspace:WaitForChild("Deployed Letters"):GetChildren() do
-			if v.Name == letterNeeded and loopOn then
+			if v.Name == letterNeeded and loopOn and v.Transparency ~= 1 then
 				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
 				print("visited letter "..v.Name)
 				task.wait(0.25)
