@@ -185,7 +185,7 @@ RegLetters.Activated:Connect(function()
 				if letterPart.Transparency ~= 1 then
 					game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = letterPart.CFrame
 					print("visited letter "..letterPart.Name)
-					task.wait(0.25)
+					task.wait(0.15)
 				else
 					
 				end
@@ -206,7 +206,7 @@ NeededLetters.Activated:Connect(function()
 			if v.Name == letterNeeded and loopOn and v.Transparency ~= 1 then
 				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
 				print("visited letter "..v.Name)
-				task.wait(0.25)
+				task.wait(0.15)
 			end 
 		end
 
