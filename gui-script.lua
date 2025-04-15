@@ -3,7 +3,7 @@
 
 -- Instances:
 
-local LetterSearchGui = Instance.new("ScreenGui")
+local LetterSearchFarmGui = Instance.new("ScreenGui")
 local Frame = Instance.new("Frame")
 local ImageLabel = Instance.new("ImageLabel")
 local UICorner = Instance.new("UICorner")
@@ -16,20 +16,22 @@ local NeededLetters = Instance.new("TextButton")
 local UIPadding_2 = Instance.new("UIPadding")
 local UICorner_4 = Instance.new("UICorner")
 local CloseButton = Instance.new("TextButton")
-local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+local UICorner_5 = Instance.new("UICorner")
 local StopLoop = Instance.new("TextButton")
 local UIPadding_3 = Instance.new("UIPadding")
-local UICorner_5 = Instance.new("UICorner")
+local UICorner_6 = Instance.new("UICorner")
+local Author = Instance.new("TextLabel")
 local UIStroke = Instance.new("UIStroke")
 local UIStroke_1 = Instance.new("UIStroke")
+local UIStroke_2 = Instance.new("UIStroke")
 
 --Properties:
 
-LetterSearchGui.Name = "LetterSearchGui"
-LetterSearchGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-LetterSearchGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+LetterSearchFarmGui.Name = "LetterSearchFarmGui"
+LetterSearchFarmGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+LetterSearchFarmGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
-Frame.Parent = LetterSearchGui
+Frame.Parent = LetterSearchFarmGui
 Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Frame.BackgroundTransparency = 0.300
 Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
@@ -59,14 +61,15 @@ TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel.BackgroundTransparency = 1.000
 TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
 TextLabel.BorderSizePixel = 0
-TextLabel.Position = UDim2.new(0, 0, 0.0396826304, 0)
-TextLabel.Size = UDim2.new(0.90298444, 0, 0.137198597, 0)
+TextLabel.Position = UDim2.new(0.0273628812, 0, 0.0396826155, 0)
+TextLabel.Size = UDim2.new(0.875621974, 0, 0.137198597, 0)
 TextLabel.Font = Enum.Font.LuckiestGuy
 TextLabel.Text = "Letter Search Farm!"
 TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel.TextScaled = true
 TextLabel.TextSize = 14.000
 TextLabel.TextWrapped = true
+TextLabel.TextXAlignment = Enum.TextXAlignment.Left
 
 RegLetters.Name = "RegLetters"
 RegLetters.Parent = Frame
@@ -117,11 +120,11 @@ UICorner_4.Parent = NeededLetters
 CloseButton.Name = "CloseButton"
 CloseButton.Parent = Frame
 CloseButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-CloseButton.BackgroundTransparency = 1.000
+CloseButton.BackgroundTransparency = 0.500
 CloseButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
 CloseButton.BorderSizePixel = 0
-CloseButton.Position = UDim2.new(0.885571539, 0, 0.0115715638, 0)
-CloseButton.Size = UDim2.new(0.169552058, 0, 0.189285725, 0)
+CloseButton.Position = UDim2.new(0.805969536, 0, 0.0396826155, 0)
+CloseButton.Size = UDim2.new(0.169552058, 0, 0.17605561, 0)
 CloseButton.Font = Enum.Font.FredokaOne
 CloseButton.Text = "X"
 CloseButton.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -129,7 +132,8 @@ CloseButton.TextScaled = true
 CloseButton.TextSize = 14.000
 CloseButton.TextWrapped = true
 
-UIAspectRatioConstraint.Parent = CloseButton
+UICorner_5.CornerRadius = UDim.new(0, 12)
+UICorner_5.Parent = CloseButton
 
 StopLoop.Name = "StopLoop"
 StopLoop.Parent = Frame
@@ -151,8 +155,24 @@ UIPadding_3.PaddingLeft = UDim.new(0.100000001, 0)
 UIPadding_3.PaddingRight = UDim.new(0.100000001, 0)
 UIPadding_3.PaddingTop = UDim.new(0.0500000007, 0)
 
-UICorner_5.CornerRadius = UDim.new(0, 10)
-UICorner_5.Parent = StopLoop
+UICorner_6.CornerRadius = UDim.new(0, 10)
+UICorner_6.Parent = StopLoop
+
+Author.Name = "Author"
+Author.Parent = Frame
+Author.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Author.BackgroundTransparency = 1.000
+Author.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Author.BorderSizePixel = 0
+Author.Position = UDim2.new(0.0273628812, 0, 0.17192091, 0)
+Author.Size = UDim2.new(0.922885716, 0, 0.0760950372, 0)
+Author.Font = Enum.Font.LuckiestGuy
+Author.Text = "By Ryry"
+Author.TextColor3 = Color3.fromRGB(255, 255, 255)
+Author.TextScaled = true
+Author.TextSize = 14.000
+Author.TextWrapped = true
+Author.TextXAlignment = Enum.TextXAlignment.Left
 
 UIStroke.Parent = Frame
 UIStroke.Color = Color3.fromRGB(255, 255, 255)
@@ -161,6 +181,10 @@ UIStroke.Thickness = 2
 UIStroke_1.Parent = TextLabel
 UIStroke_1.Color = Color3.fromRGB(0, 0, 0)
 UIStroke_1.Thickness = 1.2
+
+UIStroke_2.Parent = Author
+UIStroke_2.Color = Color3.fromRGB(0, 0, 0)
+UIStroke_2.Thickness = 1.2
 
 local loopOn = false
 
@@ -174,20 +198,20 @@ RegLetters.Activated:Connect(function()
 		for index, v in splitWord do
 			if loopOn then
 				local letterPart
-				
+
 				for i, letter in game.Workspace:WaitForChild("Deployed Letters"):GetChildren() do
 					if letter.Name == splitWord[index] and letter.Transparency ~= 1 then
 						letterPart = letter
 						break
 					end
 				end
-				
+
 				if letterPart.Transparency ~= 1 then
 					game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = letterPart.CFrame
 					print("visited letter "..letterPart.Name)
 					task.wait(0.15)
 				else
-					
+
 				end
 			end
 		end
@@ -201,7 +225,7 @@ NeededLetters.Activated:Connect(function()
 		loopOn = true
 		local oldPlrPos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
 		local letterNeeded = game:GetService("ReplicatedStorage"):WaitForChild("Values"):WaitForChild("LetterFinding").Value
-		
+
 		for i, v in game.Workspace:WaitForChild("Deployed Letters"):GetChildren() do
 			if v.Name == letterNeeded and loopOn and v.Transparency ~= 1 then
 				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
@@ -224,3 +248,5 @@ StopLoop.Activated:Connect(function()
 		print("stopped letter teleporting.")
 	end
 end)
+
+local hum: Humanoid = game.Players.LocalPlayer.Humanoid
