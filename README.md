@@ -1,4 +1,4 @@
-# This is part of my Letter Search MAIN HUB.
+# This is part of the Letter Search MAIN HUB.
 ## https://github.com/ryleyw8412/Letter-Search-hub/tree/main
 
 ```
