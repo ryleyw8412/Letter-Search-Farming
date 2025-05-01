@@ -27,7 +27,8 @@ local UIGradient_4 = Instance.new("UIGradient")
 --Properties:
 
 LetterSearchFarming.Name = "LetterSearchFarming"
-LetterSearchFarming.Parent = game.CoreGui
+LetterSearchFarming.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+LetterSearchFarming.Enabled = false
 LetterSearchFarming.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 Main.Name = "Main"
@@ -60,6 +61,7 @@ MainTitle.TextXAlignment = Enum.TextXAlignment.Left
 
 UIPadding.Parent = MainTitle
 UIPadding.PaddingLeft = UDim.new(0.0250000004, 0)
+UIPadding.PaddingRight = UDim.new(0.100000001, 0)
 
 RegLetters.Name = "RegLetters"
 RegLetters.Parent = Main
@@ -165,7 +167,7 @@ UIGradient_4.Parent = Main
 
 -- Scripts:
 
-local function JLYCH_fake_script() -- RegLetters.LocalScript 
+local function MFWEP_fake_script() -- RegLetters.LocalScript 
 	local script = Instance.new('LocalScript', RegLetters)
 
 	script.Parent.Activated:Connect(function()
@@ -202,8 +204,8 @@ local function JLYCH_fake_script() -- RegLetters.LocalScript
 		end
 	end)
 end
-coroutine.wrap(JLYCH_fake_script)()
-local function WMWFU_fake_script() -- FindTheLetter.LocalScript 
+coroutine.wrap(MFWEP_fake_script)()
+local function WNAHZGG_fake_script() -- FindTheLetter.LocalScript 
 	local script = Instance.new('LocalScript', FindTheLetter)
 
 	script.Parent.Activated:Connect(function()
@@ -228,16 +230,16 @@ local function WMWFU_fake_script() -- FindTheLetter.LocalScript
 		end
 	end)
 end
-coroutine.wrap(WMWFU_fake_script)()
-local function FCSKXES_fake_script() -- CloseButton.LocalScript 
+coroutine.wrap(WNAHZGG_fake_script)()
+local function KQLGU_fake_script() -- CloseButton.LocalScript 
 	local script = Instance.new('LocalScript', CloseButton)
 
 	script.Parent.Activated:Connect(function()
 		script.Parent.Parent.Parent:Destroy()
 	end)
 end
-coroutine.wrap(FCSKXES_fake_script)()
-local function SIPYLY_fake_script() -- StopLoop.LocalScript 
+coroutine.wrap(KQLGU_fake_script)()
+local function QYLQL_fake_script() -- StopLoop.LocalScript 
 	local script = Instance.new('LocalScript', StopLoop)
 
 	script.Parent.Activated:Connect(function()
@@ -247,15 +249,15 @@ local function SIPYLY_fake_script() -- StopLoop.LocalScript
 		end
 	end)
 end
-coroutine.wrap(SIPYLY_fake_script)()
-local function AGJDWLF_fake_script() -- Main.MakeDraggable 
+coroutine.wrap(QYLQL_fake_script)()
+local function DZMPC_fake_script() -- Main.MakeDraggable 
 	local script = Instance.new('LocalScript', Main)
 
 	script.Parent.Active = true
 	script.Parent.Draggable = true
 end
-coroutine.wrap(AGJDWLF_fake_script)()
-local function SJYDH_fake_script() -- LetterSearchFarming.Setup 
+coroutine.wrap(DZMPC_fake_script)()
+local function HJWYJDO_fake_script() -- LetterSearchFarming.Setup 
 	local script = Instance.new('LocalScript', LetterSearchFarming)
 
 	local MainStroke = Instance.new("UIStroke")
@@ -275,4 +277,4 @@ local function SJYDH_fake_script() -- LetterSearchFarming.Setup
 		stroke.Color = Color3.fromRGB(255, 255, 255)
 	end
 end
-coroutine.wrap(SJYDH_fake_script)()
+coroutine.wrap(HJWYJDO_fake_script)()
