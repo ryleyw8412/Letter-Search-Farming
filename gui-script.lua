@@ -27,7 +27,7 @@ local UIGradient_4 = Instance.new("UIGradient")
 --Properties:
 
 LetterSearchFarming.Name = "LetterSearchFarming"
-LetterSearchFarming.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+LetterSearchFarming.Parent = game.CoreGui
 LetterSearchFarming.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 Main.Name = "Main"
