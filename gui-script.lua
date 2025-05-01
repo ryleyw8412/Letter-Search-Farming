@@ -28,7 +28,7 @@ local UIGradient_4 = Instance.new("UIGradient")
 
 LetterSearchFarming.Name = "LetterSearchFarming"
 LetterSearchFarming.Parent = game.CoreGui
-LetterSearchFarming.Enabled = false
+LetterSearchFarming.Enabled = true
 LetterSearchFarming.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 Main.Name = "Main"
